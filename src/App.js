@@ -15,6 +15,7 @@ function App() {
 
       <Login />
       <UserForm />
+      <Parent />
     </div>
     
   );
