@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+
 import Login from "./Login";
-import { useTranslation } from "react-i18next";
 import UserForm from "./UserForm";
+import Parent from "./Parent";
+import MemoExample from "./MemoExample";
+import UseEffectDemo from "./UseEffectDemo";
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const [page, setPage] = useState("login");
 
   return (
-    <div>
-      <h1>{t("welcome")}</h1>
+    <div style={{ padding: "20px" }}>
+      {/* Navigation */}
+      <div style={{ marginBottom: "20px" }}>
+        <button onClick={() => setPage("login")}>Login</button>
+        <button onClick={() => setPage("form")}>Form</button>
+        <button onClick={() => setPage("callback")}>useCallback</button>
+        <button onClick={() => setPage("memo")}>useMemo</button>
+        <button onClick={() => setPage("effect")}>useEffect</button>
+      </div>
 
-      <button onClick={() => i18n.changeLanguage("en")}>English</button>
-      <button onClick={() => i18n.changeLanguage("es")}>Spanish</button>
-
-      <Login />
-      <UserForm />
-      <Parent />
-      <MemoExample />
+      {/* Pages */}
+      {page === "login" && <Login />}
+      {page === "form" && <UserForm />}
+      {page === "callback" && <Parent />}
+      {page === "memo" && <MemoExample />}
+      {page === "effect" && <UseEffectDemo />}
     </div>
-    
   );
 }
 
