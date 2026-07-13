@@ -15,6 +15,9 @@ import FormList from "./components/FormList";
 function App() {
   return (
     <Router>
+      <h1 className="text-4xl font-bold text-blue-500">
+  Tailwind is working!
+</h1>
       <div style={{ padding: "20px" }}>
 
         {/* Navigation */}
