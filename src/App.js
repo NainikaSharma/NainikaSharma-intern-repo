@@ -10,6 +10,7 @@ import MemoExample from "./MemoExample";
 import UseEffectDemo from "./UseEffectDemo";
 import Counter from "./Counter";
 import CounterMessage from "./CounterMessage";
+import FormList from "./components/FormList";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Link to="/callback" style={{ marginRight: "10px" }}>useCallback</Link>
           <Link to="/effect">useEffect</Link>
           <Link to="/counter" style={{ marginRight: "10px" }}> Counter</Link>
+          <Link to="/list" style={{ marginRight: "10px" }}>Form List</Link>
         </nav>
 
         {/* Routes */}
@@ -37,8 +39,8 @@ function App() {
           <Route path="/memo" element={<MemoExample />} />
           <Route path="/callback" element={<Parent />} />
           <Route path="/effect" element={<UseEffectDemo />} />
-          <Route path="/counter" element={<Counter />} />
-          <Route path="/counter-message" element={<CounterMessage />} />
+          <Route path="/counter"element={<><Counter /><CounterMessage /></>}/>
+          <Route path="/list" element={<FormList />} />
         </Routes>
 
       </div>
