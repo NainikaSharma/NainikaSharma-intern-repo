@@ -1,74 +1,118 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# React + Tailwind CSS Project Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a React.js application configured with Tailwind CSS for styling. Tailwind CSS is used alongside existing CSS styles to build and customize React components.
 
-In the project directory, you can run:
+## Environment Setup
 
-### `npm start`
+### 1. React Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project was created using Create React App:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npx create-react-app project
+```
 
-### `npm test`
+Installed project dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. Tailwind CSS Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Tailwind CSS was installed using:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
 
-### `npm run eject`
+Tailwind configuration was created and customized.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The `tailwind.config.js` file contains:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```javascript
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
+};
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The `preflight: false` option was added to disable Tailwind's default CSS reset, preventing conflicts with the existing project styling.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 3. Adding Tailwind Styles
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Tailwind directives were added to `src/index.css`:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 4. Testing Tailwind
 
-### Analyzing the Bundle Size
+Tailwind CSS was tested by adding utility classes to React components:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```jsx
+<h1 className="text-4xl font-bold text-blue-500">
+  Tailwind is working!
+</h1>
+```
 
-### Making a Progressive Web App
+The application was started with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+Tailwind styling successfully rendered in the browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Running the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Start the development server:
 
-### `npm run build` fails to minify
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# NainikaSharma-intern-repo
->>>>>>> 24f27aa833ad5b10c0b8308fecf450911347cba4
+The application runs at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Technologies Used
+
+* React.js
+* Tailwind CSS
+* JavaScript
+* React Router
+* Redux Toolkit
+* Node.js
+* npm
+
+## Repository
+
+GitHub Repository:
+
+NainikaSharma-intern-repo
