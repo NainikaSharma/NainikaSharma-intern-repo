@@ -11,6 +11,7 @@ import UseEffectDemo from "./UseEffectDemo";
 import Counter from "./Counter";
 import CounterMessage from "./CounterMessage";
 import FormList from "./components/FormList";
+import ReduxCounter from "./ReduxCounter"; // Redux
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           <Link to="/effect">useEffect</Link>
           <Link to="/counter" style={{ marginRight: "10px" }}> Counter</Link>
           <Link to="/list" style={{ marginRight: "10px" }}>Form List</Link>
+          <Link to="/redux-counter" style={{ marginRight: "10px" }}>
+  Redux Counter
+</Link>
         </nav>
 
         {/* Routes */}
@@ -42,8 +46,9 @@ function App() {
           <Route path="/memo" element={<MemoExample />} />
           <Route path="/callback" element={<Parent />} />
           <Route path="/effect" element={<UseEffectDemo />} />
-          <Route path="/counter"element={<><Counter /><CounterMessage /></>}/>
+          <Route path="/counter" element={<Counter />} />
           <Route path="/list" element={<FormList />} />
+          <Route path="/redux-counter" element={<><ReduxCounter /><CounterMessage /></>}/>
         </Routes>
 
       </div>
