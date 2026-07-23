@@ -13,6 +13,7 @@ import CounterMessage from "./CounterMessage";
 import FormList from "./components/FormList";
 import ReduxCounter from "./ReduxCounter"; // Redux
 import HelloWorld from "./HelloWorld";
+import BuggyCounter from "./BuggyCounter";
 
 function App() {
   return (
@@ -38,9 +39,8 @@ function App() {
           <Link to="/effect">useEffect</Link>
           <Link to="/counter" style={{ marginRight: "10px" }}> Counter</Link>
           <Link to="/list" style={{ marginRight: "10px" }}>Form List</Link>
-          <Link to="/redux-counter" style={{ marginRight: "10px" }}>
-  Redux Counter
-</Link>
+          <Link to="/redux-counter" style={{ marginRight: "10px" }}>Redux Counter</Link>
+          <Link to="/buggy-counter" style={{ marginRight: "10px" }}>Buggy Counter</Link>
         </nav>
 
         {/* Routes */}
@@ -55,6 +55,7 @@ function App() {
           <Route path="/counter" element={<Counter />} />
           <Route path="/list" element={<FormList />} />
           <Route path="/redux-counter" element={<><ReduxCounter /><CounterMessage /></>}/>
+          <Route path="/buggy-counter" element={<BuggyCounter />} />
         </Routes>
 
       </div>
