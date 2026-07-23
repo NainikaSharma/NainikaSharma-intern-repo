@@ -12,13 +12,19 @@ import Counter from "./Counter";
 import CounterMessage from "./CounterMessage";
 import FormList from "./components/FormList";
 import ReduxCounter from "./ReduxCounter"; // Redux
+import HelloWorld from "./HelloWorld";
 
 function App() {
   return (
+    
     <Router>
       <h1 className="text-4xl font-bold text-blue-500">
   Tailwind is working!
 </h1>
+<div>
+      <HelloWorld name="Nainika" />
+    </div>
+
       <div style={{ padding: "20px" }}>
 
         {/* Navigation */}
