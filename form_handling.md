@@ -10,7 +10,7 @@ Formik, when used with Yup, allows validation rules to be defined in a single sc
 
 ## **What I Learned**
 
-* How to create and manage forms using Formik.  
-* How to validate form inputs using Yup.  
-* How Formik reduces boilerplate code in React applications.  
-* How to handle form submissions efficiently.
+- How to create and manage forms using Formik.
+- How to validate form inputs using Yup.
+- How Formik reduces boilerplate code in React applications.
+- How to handle form submissions efficiently.

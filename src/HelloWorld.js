@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function HelloWorld({ name }) {
   return (
@@ -8,5 +9,7 @@ function HelloWorld({ name }) {
     </div>
   );
 }
-
+HelloWorld.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 export default HelloWorld;

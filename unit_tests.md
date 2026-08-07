@@ -10,8 +10,7 @@ The most challenging part was understanding how Jest test files are structured a
 
 ## **What I Learned**
 
-* Jest is a JavaScript testing framework used for automated testing.  
-* Unit tests help verify that individual functions work correctly.  
-* Automated testing improves code reliability and maintainability.  
-* Jest provides simple methods such as `test()` and `expect()` for writing tests.
-
+- Jest is a JavaScript testing framework used for automated testing.
+- Unit tests help verify that individual functions work correctly.
+- Automated testing improves code reliability and maintainability.
+- Jest provides simple methods such as `test()` and `expect()` for writing tests.

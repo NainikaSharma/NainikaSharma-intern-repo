@@ -14,9 +14,9 @@ useCallback may not be useful for simple components where performance is not a c
 
 ## **What I Learned**
 
-* How useCallback helps optimize React applications.  
-* How function references can trigger unnecessary re-renders.  
-* The difference between useCallback and useMemo.  
-* When to use useCallback and when it may be unnecessary.  
-*   
-* 
+- How useCallback helps optimize React applications.
+- How function references can trigger unnecessary re-renders.
+- The difference between useCallback and useMemo.
+- When to use useCallback and when it may be unnecessary.
+-
+-

@@ -8,12 +8,15 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
+    "ajv": "8.17.1",
+    "ajv-keywords": "5.1.0",
     "axios": "^1.16.1",
     "formik": "^2.4.9",
-    "i18next": "^26.3.1",
+    "i18next": "^23.16.8",
+    "prop-types": "^15.8.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-i18next": "^17.0.8",
+    "react-i18next": "^15.4.1",
     "react-redux": "^9.3.0",
     "react-router-dom": "^7.18.0",
     "react-scripts": "5.0.1",
@@ -25,7 +28,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "lint": "eslint src --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -46,8 +52,20 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^8.0.1",
+    "@babel/preset-react": "^8.0.1",
     "autoprefixer": "^10.5.2",
+    "cspell": "^10.0.1",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "markdownlint-cli2": "^0.23.1",
     "postcss": "^8.5.16",
+    "prettier": "^3.9.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^4.9.5"
   }

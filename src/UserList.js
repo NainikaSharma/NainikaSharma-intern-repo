@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { fetchUsers } from "./api";
+import React, { useEffect, useState } from 'react';
+import { fetchUsers } from './api';
 
 export default function UserList() {
   // Holds the list of users returned from the API.

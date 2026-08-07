@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Child({ onClick }) {
-  console.log("🔁 Child rendered");
+  console.log('🔁 Child rendered');
 
   return (
     <div>
@@ -10,5 +11,7 @@ function Child({ onClick }) {
     </div>
   );
 }
-
+Child.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 export default React.memo(Child);

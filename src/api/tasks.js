@@ -1,6 +1,6 @@
-import api from "./axiosInstance";
+import api from './axiosInstance';
 
 export const getTasks = async () => {
-  const response = await api.get("/tasks");
+  const response = await api.get('/tasks');
   return response.data;
 };

@@ -1,13 +1,13 @@
-import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
-const BASE_URL = "https://reqres.in";
+const BASE_URL = 'https://reqres.in';
 
 const api = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
   headers: {
-    Accept: "*/*",
+    Accept: '*/*',
   },
 });
 
@@ -15,10 +15,10 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     // Add unique request ID
-    config.headers["X-Request-ID"] = uuidv4();
+    config.headers['X-Request-ID'] = uuidv4();
 
     // Attach auth token if exists
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem('authToken');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -42,14 +42,14 @@ api.interceptors.response.use(
   },
   (error) => {
     // Timeout handling
-    if (error.code === "ECONNABORTED") {
-      console.error("Request timed out");
+    if (error.code === 'ECONNABORTED') {
+      console.error('Request timed out');
     }
 
     // Unauthorized handling
     if (error.response?.status === 401) {
-      localStorage.removeItem("authToken");
-      window.location.href = "/login";
+      localStorage.removeItem('authToken');
+      window.location.href = '/login';
     }
 
     return Promise.reject(error);

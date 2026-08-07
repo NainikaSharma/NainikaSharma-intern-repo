@@ -3,13 +3,13 @@
 
 export function getUserName(user) {
   // Guard clause: ensure user object exists
-  if (!user || typeof user !== "object") {
-    return "Unknown User";
+  if (!user || typeof user !== 'object') {
+    return 'Unknown User';
   }
 
   // Guard clause: ensure name exists and is a string
-  if (!user.name || typeof user.name !== "string") {
-    return "Unknown User";
+  if (!user.name || typeof user.name !== 'string') {
+    return 'Unknown User';
   }
 
   // Safe to use .toUpperCase() now

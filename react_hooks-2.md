@@ -14,9 +14,9 @@ Without useMemo, expensive calculations will run on every component render, even
 
 ## **What I Learned**
 
-* How useMemo memoizes computed values.  
-* How it helps avoid unnecessary recalculations.  
-* The importance of optimizing expensive operations in React.  
-* When useMemo is useful and when it is unnecessary.  
-*   
-* 
+- How useMemo memoizes computed values.
+- How it helps avoid unnecessary recalculations.
+- The importance of optimizing expensive operations in React.
+- When useMemo is useful and when it is unnecessary.
+-
+-

@@ -12,11 +12,11 @@ In this task, I learned how \`useEffect\` runs on component mount, update, and u
 
 \- Created a React component that:
 
-  \- Logs a message when the component mounts.
+\- Logs a message when the component mounts.
 
-  \- Logs a message when the component unmounts using a cleanup function.
+\- Logs a message when the component unmounts using a cleanup function.
 
-  \- Fetches data from an API when a button is clicked.
+\- Fetches data from an API when a button is clicked.
 
 \- Implemented cleanup function inside \`useEffect\` to avoid memory leaks.
 
@@ -47,4 +47,3 @@ Improper use of \`useEffect\`, such as missing dependency arrays or incorrect de
 \- Proper dependency management is important for performance.
 
 \- Separating event logic and side effects improves code structure and readability.
-

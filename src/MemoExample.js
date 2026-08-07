@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState } from 'react';
 
 function MemoExample() {
   const [count, setCount] = useState(0);
@@ -8,7 +8,7 @@ function MemoExample() {
 
   // ❌ Expensive calculation (without memoization)
   const expensiveCalculation = (numList) => {
-    console.log("🔥 Running expensive calculation...");
+    console.log('🔥 Running expensive calculation...');
     return numList.reduce((acc, num) => acc + num, 0);
   };
 
@@ -23,9 +23,7 @@ function MemoExample() {
 
       <p>Total Sum: {total}</p>
 
-      <button onClick={() => setCount(count + 1)}>
-        Re-render ({count})
-      </button>
+      <button onClick={() => setCount(count + 1)}>Re-render ({count})</button>
     </div>
   );
 }

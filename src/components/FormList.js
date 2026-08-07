@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function FormList() {
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState('');
   const [items, setItems] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (inputText.trim() === "") return;
+    if (inputText.trim() === '') return;
 
     setItems([...items, inputText]);
-    setInputText("");
+    setInputText('');
   };
 
   return (

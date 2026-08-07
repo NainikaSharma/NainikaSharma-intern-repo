@@ -1,6 +1,6 @@
-import api from "./axiosInstance";
+import api from './axiosInstance';
 
 export const createPayment = async (data) => {
-  const response = await api.post("/payments", data);
+  const response = await api.post('/payments', data);
   return response.data;
 };

@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const navigate = useNavigate();
@@ -8,9 +8,7 @@ function Home() {
     <div>
       <h1>Home Page</h1>
 
-      <button onClick={() => navigate("/profile")}>
-        Go to Profile
-      </button>
+      <button onClick={() => navigate('/profile')}>Go to Profile</button>
     </div>
   );
 }

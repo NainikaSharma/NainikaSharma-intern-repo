@@ -1,0 +1,20 @@
+name: Markdown Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Markdown Lint
+        uses: DavidAnson/markdownlint-cli2-action@v16
+
+      - name: Spell Check
+        uses: streetsidesoftware/cspell-action@v6

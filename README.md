@@ -36,9 +36,7 @@ The `tailwind.config.js` file contains:
 
 ```javascript
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
   },
@@ -70,9 +68,7 @@ Tailwind directives were added to `src/index.css`:
 Tailwind CSS was tested by adding utility classes to React components:
 
 ```jsx
-<h1 className="text-4xl font-bold text-blue-500">
-  Tailwind is working!
-</h1>
+<h1 className="text-4xl font-bold text-blue-500">Tailwind is working!</h1>
 ```
 
 The application was started with:
@@ -103,13 +99,13 @@ http://localhost:3000
 
 ## Technologies Used
 
-* React.js
-* Tailwind CSS
-* JavaScript
-* React Router
-* Redux Toolkit
-* Node.js
-* npm
+- React.js
+- Tailwind CSS
+- JavaScript
+- React Router
+- Redux Toolkit
+- Node.js
+- npm
 
 ## Repository
 
