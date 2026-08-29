@@ -1,1 +1,1 @@
-This is the original version of the file.
+This line was changed in the conflict-test-2 branch.
