@@ -1,51 +1,106 @@
-# Advanced Git Commands Understanding
+# Git Understanding: Staging vs. Committing
 
-## git checkout main -- <file>
+## What is the difference between staging and committing?
 
-### What does it do?
-This command restores a specific file from the main branch without affecting other changes in the working directory.
+**Staging** and **committing** are two separate steps in Git.
 
-### When would I use it?
-In a real project, this is useful when I accidentally modify a file and want to restore only that file from the stable main branch while keeping other unfinished work.
+Staging means selecting changes that I want to include in the next commit. This is done using:
 
-### What surprised me?
-I learned that checkout can be used for restoring individual files, not only switching branches.
+```bash
+git add <file>
+```
 
----
+The staged changes are placed in Git's **staging area**, also called the index. They are not yet permanently recorded in the repository history.
 
-## git cherry-pick <commit>
+Committing means saving the staged changes as a new entry in the Git repository's history. This is done using:
 
-### What does it do?
-Cherry-pick applies a specific commit from another branch into the current branch without merging the entire branch.
+```bash
+git commit -m "Commit message"
+```
 
-### When would I use it?
-It is useful when another developer has a small bug fix or important feature commit that needs to be moved into my branch without bringing unrelated changes.
+For example:
 
-### What surprised me?
-I found that a single commit can be transferred between branches while keeping its original commit message and changes.
+```bash
+git add git_understanding.md
+git commit -m "Add Git staging and committing explanation"
+```
 
----
+Therefore:
 
-## git log
+* **Working directory** → where I make changes to files.
+* **Staging area** → where I select changes that should be included in the next commit.
+* **Repository** → where committed changes are permanently recorded in Git history.
 
-### What does it do?
-Git log displays the commit history of a repository.
+## Why does Git separate these two steps?
 
-### When would I use it?
-Developers use it to understand project evolution, find previous changes, investigate bugs, and review contributions from team members.
+Git separates staging and committing because it gives developers more control over what goes into each commit.
 
-### What surprised me?
-Using --graph and --decorate options makes branch history much easier to understand.
+For example, if I modify three files but only want to commit two of them, I can stage only those two files:
 
----
+```bash
+git add file1.txt
+git add file2.txt
+```
 
-## git blame <file>
+I can then commit them without including the changes in `file3.txt`.
 
-### What does it do?
-Git blame shows who last modified each line of a file and which commit introduced the change.
+This helps keep commits organised and focused on a specific change.
 
-### When would I use it?
-It helps when debugging issues or understanding why a specific line of code exists.
+## When would I want to stage changes without committing?
 
-### What surprised me?
-I learned that blame is not about assigning responsibility but about tracking the history and context of changes..
+I may want to stage changes without committing when:
+
+* I have made changes to several files but only want some of them in the next commit.
+* I want to review the changes before committing.
+* I am preparing a logical group of changes for one commit.
+* I want to check exactly what will be included in the commit.
+* I am working on a larger task and want to separate different changes into multiple commits.
+
+Useful commands for checking staged changes include:
+
+```bash
+git status
+```
+
+and:
+
+```bash
+git diff --staged
+```
+
+## Practical experiment
+
+I modified `git_understanding.md` and first staged the file using:
+
+```bash
+git add git_understanding.md
+```
+
+I then checked the status:
+
+```bash
+git status
+```
+
+Git showed the file under **Changes to be committed**, which demonstrated that the change had been staged but not committed.
+
+I then unstaged the file using:
+
+```bash
+git reset HEAD git_understanding.md
+```
+
+After running `git status` again, the file appeared under **Changes not staged for commit**. This demonstrated that the changes still existed in my working directory, but they had been removed from the staging area.
+
+Finally, I staged and committed the file:
+
+```bash
+git add git_understanding.md
+git commit -m "Add Git staging and committing explanation"
+```
+
+After committing, `git status` showed that there were no uncommitted changes.
+
+## Conclusion
+
+The main difference is that **staging selects changes for the next commit, while committing records those staged changes in Git history**. Separating these steps allows developers to carefully choose and organise changes before permanently recording them.
