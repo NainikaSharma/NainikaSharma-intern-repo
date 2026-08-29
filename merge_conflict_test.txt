@@ -1,1 +1,1 @@
-This line was changed differently in the main branch.
+This line was updated after resolving changes from both branches.
