@@ -1,0 +1,37 @@
+[33m4ad0068[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mgit-bisect-practice[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m wip: sync in-progress work (React components, tests, configs, docs)
+[33m8b3672f[m fix: validate email format in login form
+[33m0e7b920[m Fixed the bug where the login form was not validating email addresses correctly because the regex pattern was missing a check for the @ symbol and also updated the CSS slightly for the submit button and refactored handleSubmit to be async and added some console.logs for debugging that I probably should remove later but did not have time to test yet
+[33m725e8b3[m fixed stuff
+[33mc10beb1[m Merge pull request #67 from NainikaSharma/feature/pr-practice
+[33m9407b0a[m Add PR workflow reflection to documentation
+[33ma6b581c[m Practice React debugging with stale closure example
+[33m61a95ee[m Update README with React and Tailwind setup
+[33m06729fb[m Create HelloWorld component with props
+[33m57c71b6[m Implement Counter component using useState
+[33m7a5c786[m Convert Counter and Button components to Tailwind CSS
+[33m9c3b82b[m Add FormList component with dynamic list rendering
+[33m31a0e66[m Added Redux Toolkit selectors and counter messages
+[33m47c3968[m Add React Router navigation with Home and Profile pages
+[33mdb93307[m Add useEffect demo with API fetch and cleanup functions
+[33m184b435[m Add useMemo example for optimizing expensive calculations
+[33m1df597a[m Add useCallback example to prevent unnecessary re-renders
+[33m61cab79[m Add Formik form with Yup validation for user inputs
+[33mbe20ac3[m Integrate i18next with login form and add EN/ES translations
+[33m78ebd90[m Add Jest unit test for add utility function
+[33m6d1dde3[m Add files via upload
+[33m9469bed[m Add files via upload
+[33ma80bb05[m Add files via upload
+[33m124b630[m Add files via upload
+[33md8f9a99[m Add files via upload
+[33m9e69af1[m Add files via upload
+[33me8f059b[m Add files via upload
+[33m08620c0[m Add files via upload
+[33m200cb89[m Refactor function to handle errors and edge cases using guard clauses
+[33mee10e6b[m Add meaningful comments to UserList component
+[33md7aa6af[m Add mocked API test for UserList component
+[33mb5dabe6[m Add Message component and tests
+[33mc62fe62[m Fixed project structure and added Redux + Axios setup
+[33m037878e[m Fixed project structure and added Redux + Axios setup
+[33m24f27aa[m Added Axios setup and React login project
+[33m4861767[m Create project
+[33m27d9bce[m Initial commit
