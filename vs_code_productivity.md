@@ -5,7 +5,7 @@
 I already have Visual Studio Code installed and use it for my development
 work. I researched the default Windows shortcuts and selected the shortcuts
 below.
-
+<!-- markdownlint-disable MD013 -->
 ## Useful Shortcuts
 
 ### Navigation
@@ -40,6 +40,7 @@ below.
 | `Ctrl + Backtick` | Show or Hide Integrated Terminal | Opens or closes the terminal without leaving the editor. The backtick key is usually below `Esc`. |
 | `Ctrl + Shift + Backtick` | Create New Integrated Terminal | Opens another terminal when I need to run a separate command or process. |
 
+<!-- markdownlint-enable MD013 -->
 ## Reflection
 
 The shortcuts I expect to use most often are `Ctrl + P`, `Alt + Click`,
