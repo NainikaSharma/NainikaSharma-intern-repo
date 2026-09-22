@@ -1,87 +1,67 @@
-# React + Tailwind CSS Project Setup
+# Focus Bear Frontend Development Internship
 
 ## Overview
 
-This project is a React.js application configured with Tailwind CSS for styling. Tailwind CSS is used alongside existing CSS styles to build and customize React components.
+This repository contains the practical exercises, code examples, and written
+reflections I completed during my frontend development internship with
+Focus Bear.
 
-## Environment Setup
+The work documents my progress across development tools, Git workflows,
+clean-code practices, debugging, React, state management, testing, and other
+skills used in day-to-day frontend development.
 
-### 1. React Project
+## Learning Areas
 
-The project was created using Create React App:
+### Development Workflow
 
-```bash
-npx create-react-app project
-```
+- Git fundamentals, branches, commits, and merge conflict resolution
+- Pull requests and code review practices
+- Terminal commands and VS Code productivity shortcuts
+- Git debugging with tools such as `git bisect`
 
-Installed project dependencies:
+### React Development
+
+- Components, props, state, and event handling
+- React hooks, including `useEffect`, `useMemo`, and `useCallback`
+- Form handling and validation
+- Routing and reusable components
+- Redux Toolkit for state management
+
+### Code Quality and Testing
+
+- Clean-code principles and naming practices
+- Identifying and refactoring code smells
+- Debugging React applications
+- Unit and component testing
+- API structure and error handling
+
+### Additional Tools and Concepts
+
+- Tailwind CSS
+- Internationalisation
+- Browser developer tools and Chrome extensions
+- AI tools for development
+
+## Repository Contents
+
+The repository includes:
+
+- Markdown files containing research notes and reflections
+- React components demonstrating individual concepts
+- Unit tests for components, utilities, APIs, and Redux logic
+- Small practical exercises completed for internship tasks
+
+Each exercise focuses on a specific skill and includes either working code,
+a written reflection, or both.
+
+## Running the React Project
+
+Make sure Node.js and npm are installed. From the React project directory,
+install the dependencies:
 
 ```bash
 npm install
 ```
-
----
-
-## 2. Tailwind CSS Setup
-
-Tailwind CSS was installed using:
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
-
-Tailwind configuration was created and customized.
-
-The `tailwind.config.js` file contains:
-
-```javascript
-module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-  corePlugins: {
-    preflight: false,
-  },
-};
-```
-
-The `preflight: false` option was added to disable Tailwind's default CSS reset, preventing conflicts with the existing project styling.
-
----
-
-## 3. Adding Tailwind Styles
-
-Tailwind directives were added to `src/index.css`:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
----
-
-## 4. Testing Tailwind
-
-Tailwind CSS was tested by adding utility classes to React components:
-
-```jsx
-<h1 className="text-4xl font-bold text-blue-500">Tailwind is working!</h1>
-```
-
-The application was started with:
-
-```bash
-npm start
-```
-
-Tailwind styling successfully rendered in the browser.
-
----
-
-## Running the Project
 
 Start the development server:
 
@@ -89,26 +69,37 @@ Start the development server:
 npm start
 ```
 
-The application runs at:
+The application normally runs at:
 
-```
+```text
 http://localhost:3000
 ```
 
----
+Run the available tests with:
+
+```bash
+npm test
+```
 
 ## Technologies Used
 
-- React.js
-- Tailwind CSS
+- React
 - JavaScript
+- HTML and CSS
+- Tailwind CSS
 - React Router
 - Redux Toolkit
-- Node.js
-- npm
+- Jest and React Testing Library
+- Node.js and npm
+- Git and GitHub
+- VS Code
 
-## Repository
+## Purpose
 
-GitHub Repository:
+This repository serves as a record of my internship learning and practical
+frontend development work. It shows how I applied each concept through code,
+testing, documentation, and reflection.
 
-NainikaSharma-intern-repo
+## Author
+
+Nainika Sharma
