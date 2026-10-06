@@ -8,10 +8,10 @@ function ReduxCounter() {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 gap-6">
-      <h2 className="text-4xl font-bold text-gray-800">Counter: {count}</h2>
+    <div className="counter-demo">
+      <h2>Counter: {count}</h2>
 
-      <div className="flex gap-4">
+      <div className="counter-buttons">
         <Button onClick={() => dispatch(increment())}>Increase</Button>
 
         <Button onClick={() => dispatch(decrement())}>Decrease</Button>

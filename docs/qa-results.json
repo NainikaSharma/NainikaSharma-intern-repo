@@ -1,0 +1,22 @@
+{
+  "browser": "Chromium",
+  "checks": [
+    "All 12 pages render on direct visits",
+    "Local counter preserves its zero lower bound",
+    "Redux state survives navigation and updates both components",
+    "User form rejects empty values and retains valid submissions",
+    "Contact form validates and resets after submission",
+    "List builder adds items and ignores spaces",
+    "Memoized sum and callback exercise still update",
+    "Effects show post data, failure feedback, and child cleanup",
+    "Interval advances and resets after navigation",
+    "Login reports missing configuration and changes label language",
+    "Unknown routes have recovery navigation",
+    "No horizontal overflow at 320, 390, 768, 1024, and 1440 pixels",
+    "Mobile menu opens, navigates, and closes",
+    "No browser runtime errors"
+  ],
+  "errors": [],
+  "liveReqres": "Not tested: no user API key supplied",
+  "externalFetch": "Success and HTTP 500 tested with controlled responses"
+}

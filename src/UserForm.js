@@ -1,70 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-
-function UserForm() {
+export default function UserForm() {
+  const [submitted, setSubmitted] = useState(false);
   const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-    },
-
+    initialValues: { name: '', email: '' },
     validationSchema: Yup.object({
       name: Yup.string()
         .min(2, 'Name must be at least 2 characters')
         .required('Name is required'),
-
       email: Yup.string()
         .email('Invalid email format')
         .required('Email is required'),
     }),
-
     onSubmit: (values) => {
       console.log('Form Submitted:', values);
-      alert('Form submitted successfully!');
+      setSubmitted(true);
     },
   });
-
   return (
-    <form
-      onSubmit={formik.handleSubmit}
-      style={{ maxWidth: '400px', margin: 'auto' }}
-    >
-      <h2>User Form</h2>
-
-      {/* Name */}
-      <div style={{ marginBottom: '1rem' }}>
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.name}
-        />
-        {formik.touched.name && formik.errors.name && (
-          <p style={{ color: 'red' }}>{formik.errors.name}</p>
-        )}
-      </div>
-
-      {/* Email */}
-      <div style={{ marginBottom: '1rem' }}>
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
-        {formik.touched.email && formik.errors.email && (
-          <p style={{ color: 'red' }}>{formik.errors.email}</p>
-        )}
-      </div>
-
+    <form className="form-card" onSubmit={formik.handleSubmit} noValidate>
+      <h2>Your details</h2>
+      <p>Enter your name and email to try form validation.</p>
+      {['name', 'email'].map((field) => (
+        <div className="form-group" key={field}>
+          <label htmlFor={`user-${field}`}>
+            {field === 'name' ? 'Name' : 'Email'}
+          </label>
+          <input
+            id={`user-${field}`}
+            type={field === 'email' ? 'email' : 'text'}
+            name={field}
+            autoComplete={field}
+            placeholder={field === 'name' ? 'Your name' : 'you@example.com'}
+            onChange={(event) => {
+              setSubmitted(false);
+              formik.handleChange(event);
+            }}
+            onBlur={formik.handleBlur}
+            value={formik.values[field]}
+            aria-invalid={Boolean(
+              formik.touched[field] && formik.errors[field]
+            )}
+            aria-describedby={
+              formik.touched[field] && formik.errors[field]
+                ? `user-${field}-error`
+                : undefined
+            }
+          />
+          {formik.touched[field] && formik.errors[field] && (
+            <span id={`user-${field}-error`} className="error" role="alert">
+              {formik.errors[field]}
+            </span>
+          )}
+        </div>
+      ))}
       <button type="submit">Submit</button>
+      {submitted && (
+        <p className="success" role="status">
+          Form submitted successfully! This exercise does not send your details
+          to a server.
+        </p>
+      )}
     </form>
   );
 }
-
-export default UserForm;

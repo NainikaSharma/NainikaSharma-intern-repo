@@ -9,6 +9,8 @@ export const loginUser = async (email, password) => {
 
   const token = response.data.token;
 
+  if (!token) throw new Error('ReqRes response did not contain a token');
+
   // Store token in localStorage
   localStorage.setItem('authToken', token);
 

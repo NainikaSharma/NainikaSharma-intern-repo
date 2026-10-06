@@ -1,65 +1,69 @@
 import React, { useEffect, useState } from 'react';
-
-function UseEffectDemo() {
+export default function UseEffectDemo() {
   const [data, setData] = useState(null);
   const [show, setShow] = useState(true);
-
-  // ✅ Runs on mount + cleanup on unmount
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   useEffect(() => {
-    console.log('🟢 Component Mounted');
-
+    console.log('Component Mounted');
     return () => {
-      console.log('🔴 Component Unmounted');
+      console.log('Component Unmounted');
     };
   }, []);
-
-  // ✅ Fetch data when button is clicked
   const fetchData = async () => {
+    setLoading(true);
+    setError('');
     try {
       const response = await fetch(
         'https://jsonplaceholder.typicode.com/posts/1'
       );
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const result = await response.json();
       setData(result);
-      console.log('📦 Data fetched:', result);
-    } catch (error) {
-      console.error('Error fetching data:', error);
+      console.log('Data fetched:', result);
+    } catch (err) {
+      setError(
+        `Could not fetch the sample post (${err.message}). Check your connection and try again.`
+      );
+    } finally {
+      setLoading(false);
     }
   };
-
   return (
     <div>
       <h2>useEffect Demo</h2>
-
-      <button onClick={fetchData}>Fetch Data</button>
-
+      <p>
+        Request a sample post, then toggle the child to see its cleanup in the
+        console.
+      </p>
+      <button onClick={fetchData} disabled={loading}>
+        {loading ? 'Fetching…' : 'Fetch Data'}
+      </button>
+      {error && (
+        <p className="error" role="alert">
+          {error}
+        </p>
+      )}
       {data && (
-        <div>
+        <div className="post-result">
           <h3>{data.title}</h3>
           <p>{data.body}</p>
         </div>
       )}
-
       <hr />
-
-      <button onClick={() => setShow(!show)}>Toggle Component</button>
-
+      <button onClick={() => setShow(!show)} aria-pressed={show}>
+        Toggle Component
+      </button>
       {show && <Child />}
     </div>
   );
 }
-
-// Child component to demonstrate unmount cleanup
 function Child() {
   useEffect(() => {
-    console.log('👶 Child Mounted');
-
+    console.log('Child Mounted');
     return () => {
-      console.log('💀 Child Unmounted (cleanup executed)');
+      console.log('Child Unmounted (cleanup executed)');
     };
   }, []);
-
   return <p>Child Component is mounted</p>;
 }
-
-export default UseEffectDemo;

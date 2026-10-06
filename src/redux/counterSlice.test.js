@@ -1,23 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
+import reducer, { increment, decrement, selectCounter } from './counterSlice';
 
-const counterSlice = createSlice({
-  name: 'counter',
-  initialState: { value: 0 },
-
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-
-    decrement: (state) => {
-      state.value -= 1;
-    },
-  },
+test('starts at zero', () => {
+  expect(reducer(undefined, { type: 'init' })).toEqual({ value: 0 });
+});
+test('increments the current value', () => {
+  expect(reducer({ value: 4 }, increment())).toEqual({ value: 5 });
+});
+test('preserves the original lower bound of zero', () => {
+  expect(reducer({ value: 0 }, decrement())).toEqual({ value: 0 });
+});
+test('selects the shared counter value', () => {
+  expect(selectCounter({ counter: { value: 5 } })).toBe(5);
 });
 
-export const { increment, decrement } = counterSlice.actions;
-
-// Selector
-export const selectCounter = (state) => state.counter.value;
-
-export default counterSlice.reducer;
+test('decrements a positive value', () => {
+  expect(reducer({ value: 3 }, decrement())).toEqual({ value: 2 });
+});

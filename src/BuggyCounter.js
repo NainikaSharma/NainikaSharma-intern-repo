@@ -14,7 +14,10 @@ function BuggyCounter() {
   return (
     <div>
       <h2>Fixed Counter</h2>
-      <p>Count: {count}</p>
+      <div className="metric-value">
+        <span>Count · advances every second</span>
+        <strong>{count}</strong>
+      </div>
     </div>
   );
 }

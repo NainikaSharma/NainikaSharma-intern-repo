@@ -5,7 +5,7 @@ function CounterMessage() {
   const count = useSelector(selectCounter);
 
   return (
-    <div>
+    <div className="counter-message" role="status">
       {count === 0 && <h3>Counter is zero</h3>}
 
       {count > 0 && count < 5 && <h3>Keep counting!</h3>}

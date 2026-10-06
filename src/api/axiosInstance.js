@@ -8,6 +8,9 @@ const api = axios.create({
   timeout: 10000,
   headers: {
     Accept: '*/*',
+    ...(process.env.REACT_APP_REQRES_API_KEY
+      ? { 'x-api-key': process.env.REACT_APP_REQRES_API_KEY }
+      : {}),
   },
 });
 
@@ -49,7 +52,7 @@ api.interceptors.response.use(
     // Unauthorized handling
     if (error.response?.status === 401) {
       localStorage.removeItem('authToken');
-      window.location.href = '/login';
+      // Keep the form visible so it can display the rejected request.
     }
 
     return Promise.reject(error);

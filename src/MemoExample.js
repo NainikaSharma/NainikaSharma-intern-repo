@@ -6,7 +6,7 @@ function MemoExample() {
     return Array.from({ length: 10000 }, (_, i) => i + 1);
   });
 
-  // ❌ Expensive calculation (without memoization)
+  // Calculation is cached by useMemo below.
   const expensiveCalculation = (numList) => {
     console.log('🔥 Running expensive calculation...');
     return numList.reduce((acc, num) => acc + num, 0);
@@ -21,7 +21,10 @@ function MemoExample() {
     <div>
       <h2>useMemo Example</h2>
 
-      <p>Total Sum: {total}</p>
+      <div className="metric-value">
+        <span>Total sum</span>
+        <strong>{total.toLocaleString('en-US')}</strong>
+      </div>
 
       <button onClick={() => setCount(count + 1)}>Re-render ({count})</button>
     </div>
